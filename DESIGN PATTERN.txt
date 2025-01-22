@@ -1,0 +1,27 @@
+Tic Tac Toe Game
+
+1)  STATE PATTERN:   Tic Tac Toe game helps manage the different stages of the game by
+                     modeling each stage as a distinct state.
+         The game can be in one of several states, such as "Game Not Started," "In Progress," "Game Over (Win)," or "Game Over (Draw)." 
+Each state is represented by a class that implements common behaviors like starting the game, making a move, or checking for a winner. 
+As the game progresses, it transitions between states (e.g., from "In Progress" to "Game Over") based on the game's events, such as a player winning or
+a draw.       
+Different state transitions : When the game starts, it begins in the GameNotStarted state.
+After a player initiates the game (by calling startGame()), the game transitions to the InProgress state.
+After each move, the game checks if a player has won or if the game is a draw. If a win or draw occurs, the game transitions to the GameOverWin or GameOverDraw state, respectively.
+In either of the "Game Over" states, no further moves are allowed, and the game ends.
+
+
+2)   OBSERVER PATTERN:     The Observer Pattern allows an object (subject) to notify its dependents (observers) 
+                         about changes without needing to know who or what those observers are.
+This pattern could be used to update various parts of the game when the game state changes, such as updating the UI or sending notifications about a win, 
+draw, or player move.
+The Game (subject) notifies Observers (like a UI or score tracking system) whenever the game state changes, such as a move being made or the game ending.
+This ensures that the observers (UI or scoreboard) are updated automatically.
+
+
+3)  FACTORY PATTERN:      We could use this pattern to create different types of players in the game (e.g., human player vs AI player). 
+ The PlayerFactory could generate a specific type of player depending on user input (e.g., human player vs AI opponent).
+
+  MULTITHREADING: We can use multithreading in a Tic Tac Toe game, especially if you want to add certain features like supporting two players over a
+        network (e.g., in a client-server setup), or if you're aiming for an AI opponent that runs in the background.
