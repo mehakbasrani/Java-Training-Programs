@@ -1,0 +1,26 @@
+ONLINE FOOD DELIVERY
+
+1. SINGLETON PATTERN:     Ensures that a class has only one instance and provides a global point of access. 
+                    For managing a single database connection or a configuration manager that should be accessed throughout the application. 
+  Every time an order is placed, it needs to interact with the same database to fetch menu items, store the order, and update the delivery status. 
+Having a single instance of DatabaseConnectionManager ensures that all these operations are done through a single connection object, avoiding database 
+overload and ensuring data consistency.
+
+2. FACTORY METHOD:    Provides a way to create objects without specifying the exact class of object that will be created.
+       The Factory Method pattern can be used for creating different types of Orders (e.g., RegularOrder, ExpressOrder, SubscriptionOrder)   
+depending on the customer's choice.
+
+
+3.  OBSERVER PATTERN:    Allows one object (the subject) to notify all dependent objects (the observers) about changes in its state.
+                 Multiple parts of the system (e.g., Restaurant, Customer, Delivery Person) need to be notified when an order status changes (e.g., from 
+ In-Progress to Out for Delivery).
+
+4. DECORATOR PATTERN:     Adds new behavior to an object dynamically, allowing the object to retain its original functionality while providing additional 
+  features.  For a base Order object, additional services (like GiftWrapping, PriorityDelivery, SpecialInstructions) can be added dynamically using the 
+Decorator Pattern. A customer could opt for extra toppings or add-ons, and these can be added without changing the core Order class.
+
+
+   MULTITHREADING: 
+       Multithreading in a food delivery system can significantly improve system performance, responsiveness, and scalability by handling tasks like order 
+ processing, delivery tracking, and payment asynchronously. By breaking down tasks into separate threads, the system can perform more efficiently, ensuring 
+a better experience for both users and system operators. 
